@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./Weather.css";
 
 const Weather = () => {
   const [city, setCity] = useState("");
@@ -19,7 +20,7 @@ const Weather = () => {
 
   return (
     <div className="container mt-5">
-      <div className="row">
+      <div className="row weather-select">
         <div className="col">
           <select
             className="form-select"
@@ -41,18 +42,28 @@ const Weather = () => {
         </div>
       </div>
       {weather && (
-        <div className="mt-3">
-          <h3>
-            {weather.name}, {weather.sys.country}
-          </h3>
-          <p>Sıcaklık: {weather.main.temp} °C</p>
-          <p>Nem: {weather.main.humidity}%</p>
-          <p>Rüzgar Hızı: {weather.wind.speed} m/s</p>
-          <p>
-            Son 1 Saatteki Yağış:{" "}
-            {weather.rain ? weather.rain.oneHour + " mm" : "Yok"}
+        <div className="weather-container">
+          <div className="weather-header">
+            <h3>
+              {weather.name}, {weather.sys.country}
+            </h3>
+          </div>
+          <p className="weather-info">
+            Sıcaklık: <span>{weather.main.temp} °C</span>
           </p>
-          <p>Açıklama: {weather.weather[0].description}</p>
+          <p className="weather-info">
+            Nem: <span>{weather.main.humidity}%</span>
+          </p>
+          <p className="weather-info">
+            Rüzgar Hızı: <span>{weather.wind.speed} m/s</span>
+          </p>
+          <p className="weather-info">
+            Son 1 Saatteki Yağış:{" "}
+            <span>{weather.rain ? weather.rain.oneHour + " mm" : "Yok"}</span>
+          </p>
+          <p className="weather-info">
+            Açıklama: <span>{weather.weather[0].description}</span>
+          </p>
         </div>
       )}
     </div>

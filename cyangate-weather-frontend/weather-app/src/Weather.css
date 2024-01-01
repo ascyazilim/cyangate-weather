@@ -1,0 +1,28 @@
+/* Weather.css */
+.weather-container {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.weather-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.weather-info {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.weather-info span {
+    font-weight: bold;
+}
+
+.weather-select {
+    margin-bottom: 20px;
+}
