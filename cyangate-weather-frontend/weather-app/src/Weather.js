@@ -46,6 +46,12 @@ const Weather = () => {
             {weather.name}, {weather.sys.country}
           </h3>
           <p>Sıcaklık: {weather.main.temp} °C</p>
+          <p>Nem: {weather.main.humidity}%</p>
+          <p>Rüzgar Hızı: {weather.wind.speed} m/s</p>
+          <p>
+            Son 1 Saatteki Yağış:{" "}
+            {weather.rain ? weather.rain.oneHour + " mm" : "Yok"}
+          </p>
           <p>Açıklama: {weather.weather[0].description}</p>
         </div>
       )}
